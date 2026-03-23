@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comprobador de precios de acciones</title>
+    <link rel="stylesheet" href="/public/style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <p class="eyebrow">FreeCodeCamp InfoSec</p>
+        <h1>Comprobador de precios de acciones</h1>
+        <p class="hero-copy">
+          Consulta el precio actual de una o dos acciones y registra likes por IP anonimizados.
+        </p>
+      </section>
+
+      <section class="layout">
+        <article class="panel">
+          <h2>Consultar una accion</h2>
+          <form id="single-stock-form" class="stack">
+            <label>
+              Simbolo NASDAQ
+              <input type="text" name="stock" value="GOOG" required />
+            </label>
+            <label class="checkbox-row">
+              <input type="checkbox" name="like" />
+              <span>Dar like</span>
+            </label>
+            <button type="submit">Consultar</button>
+          </form>
+        </article>
+
+        <article class="panel">
+          <h2>Comparar dos acciones</h2>
+          <form id="multi-stock-form" class="stack">
+            <label>
+              Primer simbolo
+              <input type="text" name="stock" value="GOOG" required />
+            </label>
+            <label>
+              Segundo simbolo
+              <input type="text" name="stock" value="MSFT" required />
+            </label>
+            <label class="checkbox-row">
+              <input type="checkbox" name="like" />
+              <span>Dar like a ambas</span>
+            </label>
+            <button type="submit">Comparar</button>
+          </form>
+        </article>
+      </section>
+
+      <section class="panel api-panel">
+        <h2>Respuesta de la API</h2>
+        <p class="status" id="status">Listo para consultar.</p>
+        <pre id="json-result" class="result-box">{
+  "stockData": {
+    "stock": "GOOG",
+    "price": 0,
+    "likes": 0
+  }
+}</pre>
+      </section>
+    </main>
+
+    <script src="/public/script.js"></script>
+  </body>
+</html>
